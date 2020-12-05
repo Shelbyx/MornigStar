@@ -666,34 +666,7 @@ if (text.includes("!alay")){
     })
 }
 
-        case '!stickergif':
-        case '!gifstiker':
-        case '!gifsticker': {
-            if (args.length !== 1) return client.reply(from, 'Desculpe, o formato da mensagem está errado, por favor verifique o menu. [Wrong Format]', id)
-            const isGiphy = url.match(new RegExp(/https?:\/\/(www\.)?giphy.com/, 'gi'))
-            const isMediaGiphy = url.match(new RegExp(/https?:\/\/media.giphy.com\/media/, 'gi'))
-            if (isGiphy) {
-                const getGiphyCode = url.match(new RegExp(/(\/|\-)(?:.(?!(\/|\-)))+$/, 'gi'))
-                if (!getGiphyCode) { return client.reply(from, 'Gagal mengambil kode giphy', id) }
-                const giphyCode = getGiphyCode[0].replace(/[-\/]/gi, '')
-                const smallGifUrl = 'https://media.giphy.com/media/' + giphyCode + '/giphy-downsized.gif'
-                client.sendGiphyAsSticker(from, smallGifUrl).then(() => {
-                    client.reply(from, 'Aqui está sua figurinha😔👍')
-                    console.log(`Figurinha feita em ${processTime(t, moment())} Second`)
-                }).catch((err) => console.log(err))
-            } else if (isMediaGiphy) {
-                const gifUrl = url.match(new RegExp(/(giphy|source).(gif|mp4)/, 'gi'))
-                if (!gifUrl) { return client.reply(from, 'Falha ao recuperar o código giphy', id) }
-                const smallGifUrl = url.replace(gifUrl[0], 'giphy-downsized.gif')
-                client.sendGiphyAsSticker(from, smallGifUrl).then(() => {
-                    client.reply(from, 'Here\'s your sticker')
-                    console.log(`Figurinha feita em ${processTime(t, moment())} Second`)
-                }).catch((err) => console.log(err))
-            } else {
-                await client.reply(from, 'Desculpe, por enquanto as figurinhas gif só podem usar o link do giphy. [Giphy Only]', id)
-            }
-            break
-        }
+
 
 
 
