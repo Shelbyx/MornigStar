@@ -48,6 +48,17 @@ function foreach(arr, func)
       func(i, arr[i]);
    }
 }
+
+const readTextInGif = require('./lib/ocr')
+
+function foreach(arr, func)
+{
+   for (var i in arr)
+   {
+      func(i, arr[i]);
+   }
+}
+
 const conn = new WAConnection()
 conn.on('qr', qr =>
 {
@@ -89,8 +100,8 @@ conn.on('message-new', async(m) =>
 
 // Fitur
 
-if (text.includes('!nulis')){
-  var teks = text.replace(/!nulis /, '')
+if (text.includes('!escrever')){
+  var teks = text.replace(/!escrever /, '')
     axios.get('https://bangandre.herokuapp.com/nulis?teks= '+teks)
     .then((res) => {
       imageToBase64(res.data.result)
@@ -337,9 +348,9 @@ conn.sendMessage(id, 'ulangi dengan  !pict cewek/cowok\n\nMisal: !pict cowok' ,M
    {
       let is = m.message.conversation.toLocaleLowerCase()
 
-   if (messageType == 'gifMessage')
+   if (messageType == 'mp4Message')
    {
-      let caption = gifMessage.caption.toLocaleLowerCase()
+      let caption = mp4Message.caption.toLocaleLowerCase()
       const buffer = await conn.downloadMediaMessage(m) // to decrypt & use as a buffer
       if (caption == '!stickergif')
       {
@@ -471,7 +482,7 @@ _${kata}_
     `, MessageType.text);
   });
   }
-   if (text.includes("!pict cewek"))
+   if (text.includes("!japa"))
    {
     var items = ["ullzang girl", "cewe cantik", "hijab cantik", "korean girl", "remaja cantik", "cewek korea", "cewek jepang"];
     var cewe = items[Math.floor(Math.random() * items.length)];
@@ -501,7 +512,7 @@ _${kata}_
     });
     }
 
-   if (text.includes("!pict cowok"))
+   if (text.includes("!japo"))
    {
     var items = ["cowo ganteng", "cogan", "korean boy", "chinese boy", "japan boy", "cowok indo ganteng", "cowok korea"];
     var cowo = items[Math.floor(Math.random() * items.length)];
@@ -531,7 +542,7 @@ _${kata}_
     });
     }
 
-if (text.includes("!animepict"))
+if (text.includes("!anime"))
    {
     var items = ["anime girl", "anime cantik", "anime", "anime aesthetic", "anime hd", "gambar anime hd"];
     var nime = items[Math.floor(Math.random() * items.length)];
@@ -561,11 +572,11 @@ if (text.includes("!animepict"))
     });
     }
  
-if (text.includes("!lirik")){
-	const teks = text.split("!lirik")[1]
+if (text.includes("!letra")){
+	const teks = text.split("!letra")[1]
 	axios.get(`http://scrap.terhambar.com/lirik?word=${teks}`).then ((res) => {
 	     conn.sendMessage(id, '[ESPERE] Em andamento ⏳ aguarde um momento', MessageType.text)
-	 	let hasil = `📍lirik lagu📍${teks} \n\n\n ${res.data.result.lirik}`
+	 	let hasil = `🎶Letra: ${teks} \n\n\n ${res.data.result.lirik}`
 	conn.sendMessage(id, hasil, MessageType.text)
 	})
 }
