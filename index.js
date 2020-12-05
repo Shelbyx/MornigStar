@@ -554,7 +554,6 @@ if (text.includes("!alay")){
 	})
 }
 
-}
    if (text.includes("!yt"))
    {
       const url = text.replace(/!yt/, "");
