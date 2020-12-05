@@ -643,26 +643,6 @@ if (text.includes("!alay")){
     })
 })
 
-   if (messageType == 'gifMessage')
-   {
-      let caption = gifMessage.caption.toLocaleLowerCase()
-      const buffer = await conn.downloadMediaMessage(m) // to decrypt & use as a buffer
-      if (caption == '!stickergif')
-      {
-         const stiker = await conn.downloadAndSaveMediaMessage(m) // to decrypt & save to file
-
-         const
-         {
-            exec
-         } = require("child_process");
-         exec('cwebp -q 50 ' + stiker + ' -o temp/' + jam + '.webp', (error, stdout, stderr) =>
-         {
-            let stik = fs.readFileSync('temp/' + jam + '.webp')
-            conn.sendMessage(id, stik, MessageType.sticker)
-         });
-      }
-   }
-
 case '!stikergif':
         case '!stickergif':
         case '!gifstiker':
