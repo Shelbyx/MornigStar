@@ -643,7 +643,6 @@ if (text.includes("!alay")){
     })
 })
 
-case '!stikergif':
         case '!stickergif':
         case '!gifstiker':
         case '!gifsticker': {
