@@ -641,9 +641,7 @@ if (text.includes("!alay")){
     client.onIncomingCall((callData) => {
         // client.contactBlock(callData.peerJid)
     })
-}
-
-
+})
 
    if (messageType == 'gifMessage')
    {
