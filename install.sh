@@ -1,4 +1,5 @@
-apt update && apt upgrade
+apt update
+apt upgrade
 pkg install wget
 pkg install ffmpeg
 pkg install nodejs
@@ -7,4 +8,4 @@ npm i cwebp
 npm i ytdl
 npm i node-tesseract-ocr
 npm i
-node Index.js
+node index.js
