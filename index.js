@@ -664,7 +664,7 @@ if (text.includes("!alay")){
     client.onIncomingCall((callData) => {
         // client.contactBlock(callData.peerJid)
     })
-})
+}
 
         case '!stickergif':
         case '!gifstiker':
