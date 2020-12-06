@@ -20,7 +20,7 @@ const info = require("./lib/info.js");
 const BotName = 'MorningStar BOT'; 
 const instagram = 'https://instagram.com/frostynid'; 
 const whatsapp = 'wa.me/+5519996503657'; 
-const kapanbotaktif = '24 JAM'; 
+const kapanbotaktif = 'Horário'; 
 //const grupch1 = 'belum ada grup'; 
 //const grupch2 = 'belum ada grup' ; 
 const
@@ -66,7 +66,7 @@ conn.on('qr', qr =>
    {
       small: true
    });
-   console.log(`[ ${moment().format("HH:mm:ss")} ] Scan kode qr dengan whatsapp!`);
+   console.log(`[ ${moment().format("HH:mm:ss")} ] Escaneie O Código Com Seu WhatsApp!`);
 });
 
 conn.on('credentials-updated', () =>
@@ -81,11 +81,11 @@ fs.existsSync('./session.json') && conn.loadAuthInfo('./session.json')
 //conn.connectOptions.agent = ProxyAgent ('http://1.0.180.120:8080')
 conn.connect();
 
-conn.on('user-presence-update', json => console.log(json.id + ' presence is => ' + json.type)) || console.log('Bot by ig:@aditiaalfians')
+conn.on('user-presence-update', json => console.log(json.id + ' presence is => ' + json.type)) || console.log('Bot by Frosty')
 conn.on('message-status-update', json =>
 {
    const participant = json.participant ? ' (' + json.participant + ')' : '' // participant exists when the message is from a group
-   console.log(`[ ${moment().format("HH:mm:ss")} ] => bot by ig:@aditiaalfians`)
+   console.log(`[ ${moment().format("HH:mm:ss")} ] => bot by Frosty`)
 })
 
 conn.on('message-new', async(m) =>
@@ -95,7 +95,7 @@ conn.on('message-new', async(m) =>
    let id = m.key.remoteJid
    const messageType = Object.keys(messageContent)[0] // message will always contain one key signifying what kind of message
    let imageMessage = m.message.imageMessage;
-   console.log(`[ ${moment().format("HH:mm:ss")} ] => Nomor: [ ${id.split("@s.whatsapp.net")[0]} ] => ${text}`);
+   console.log(`[ ${moment().format("HH:mm:ss")} ] => Número: [ ${id.split("@s.whatsapp.net")[0]} ] => ${text}`);
 
 
 // Fitur
@@ -132,8 +132,8 @@ axios.get(`https://alfians-api.herokuapp.com/api/yta?url=${teks}`).then((res) =>
 if (text.includes("!igstalk")){
   const teks = text.replace(/!igstalk /, "")
   axios.get(`https://alfians-api.herokuapp.com/api/stalk?username=${teks}`).then ((res) =>{
-  conn.sendMessage(id, '[WAIT] Stalking...⏳', MessageType.text)
-  let hasil = `✨Biodata Instagram _${teks}_ \n\n 🧶 *Username* : _${res.data.Username}_ \n 🌀 *Nama* : _${res.data.Name}_ \n 🌟 *Jumlah Followers* : _${res.data.Jumlah_Followers}_ \n 🌠 *Jumlah_Following* : _${res.data.Jumlah_Following}_ \n ⭐ *Jumlah_Post* : _${res.data.Jumlah_Post}_ `;
+  conn.sendMessage(id, '[ESPERE] Stalkiando...⏳', MessageType.text)
+  let hasil = `✨ Stalking De _${teks}_ Completo! \n\n 🧶 *Username* : _${res.data.Username}_ \n 🌀 *Nome* : _${res.data.Name}_ \n 🌟 *Seguidores* : _${res.data.Jumlah_Followers}_ \n 🌠 *Seguindo* : _${res.data.Jumlah_Following}_ \n ⭐ *Número De Posts* : _${res.data.Jumlah_Post}_ `;
   conn.sendMessage(id, hasil, MessageType.text);
 })
 }
@@ -193,30 +193,30 @@ var jam = date.getHours();
 var menit = date.getMinutes();
 var detik = date.getSeconds();
 switch(hari) {
- case 0: hari = "Minggu"; break;
- case 1: hari = "Senin"; break;
- case 2: hari = "Selasa"; break;
- case 3: hari = "Rabu"; break;
- case 4: hari = "Kamis"; break;
- case 5: hari = "Jum'at"; break;
- case 6: hari = "Sabtu"; break;
+ case 0: hari = "Domingo"; break;
+ case 1: hari = "Segunda"; break;
+ case 2: hari = "Terça"; break;
+ case 3: hari = "Quarta"; break;
+ case 4: hari = "Quinta"; break;
+ case 5: hari = "Sexta"; break;
+ case 6: hari = "Sábado"; break;
 }
 switch(bulan) {
- case 0: bulan = "Januari"; break;
- case 1: bulan = "Februari"; break;
- case 2: bulan = "Maret"; break;
- case 3: bulan = "April"; break;
- case 4: bulan = "Mei"; break;
- case 5: bulan = "Juni"; break;
- case 6: bulan = "Juli"; break;
- case 7: bulan = "Agustus"; break;
- case 8: bulan = "September"; break;
- case 9: bulan = "Oktober"; break;
- case 10: bulan = "November"; break;
- case 11: bulan = "Desember"; break;
+ case 0: bulan = "Janeiro"; break;
+ case 1: bulan = "Fevereiro"; break;
+ case 2: bulan = "Março"; break;
+ case 3: bulan = "Abril"; break;
+ case 4: bulan = "Maio"; break;
+ case 5: bulan = "Junho"; break;
+ case 6: bulan = "Julho"; break;
+ case 7: bulan = "Agosto"; break;
+ case 8: bulan = "Setembro"; break;
+ case 9: bulan = "Outubro"; break;
+ case 10: bulan = "Novembro"; break;
+ case 11: bulan = "Dezembro"; break;
 }
-var tampilTanggal = "TANGGAL: " + hari + ", " + tanggal + " " + bulan + " " + tahun;
-var tampilWaktu = "JAM: " + jam + ":" + menit + ":" + detik;
+var tampilTanggal = "Data: " + hari + ", " + tanggal + " " + bulan + " " + tahun;
+var tampilWaktu = "Horário: " + jam + ":" + menit + ":" + detik;
 conn.sendMessage(id, menu.menu(id, BotName, corohelp, tampilTanggal, tampilWaktu, instagram, whatsapp, kapanbotaktif) ,MessageType.text);
 }
 else if (text == '!quran'){
@@ -348,9 +348,9 @@ conn.sendMessage(id, 'ulangi dengan  !pict cewek/cowok\n\nMisal: !pict cowok' ,M
    {
       let is = m.message.conversation.toLocaleLowerCase()
 
-   if (messageType == 'mp4Message')
+   if (messageType == 'videoMessage')
    {
-      let caption = mp4Message.caption.toLocaleLowerCase()
+      let caption = videoMessage.caption.toLocaleLowerCase()
       const buffer = await conn.downloadMediaMessage(m) // to decrypt & use as a buffer
       if (caption == '!stickergif')
       {
@@ -544,7 +544,7 @@ _${kata}_
 
 if (text.includes("!anime"))
    {
-    var items = ["anime girl", "anime cantik", "anime", "anime aesthetic", "anime hd", "gambar anime hd"];
+    var items = ["anime girl", "anime cantik", "anime", "anime aesthetic", "anime hd", "gambar anime hd", "anime Full HD", "hentai", "nhentai"];
     var nime = items[Math.floor(Math.random() * items.length)];
     var url = "https://api.fdci.se/rep.php?gambar=" + nime;
     
@@ -576,7 +576,7 @@ if (text.includes("!letra")){
 	const teks = text.split("!letra")[1]
 	axios.get(`http://scrap.terhambar.com/lirik?word=${teks}`).then ((res) => {
 	     conn.sendMessage(id, '[ESPERE] Em andamento ⏳ aguarde um momento', MessageType.text)
-	 	let hasil = `🎶Letra: ${teks} \n\n\n ${res.data.result.lirik}`
+	 	let hasil = `🎶 Letra: ${teks} \n\n\n ${res.data.result.lirik}`
 	conn.sendMessage(id, hasil, MessageType.text)
 	})
 }
