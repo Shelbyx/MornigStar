@@ -1,59 +1,44 @@
 ## MornigStar
-BOT WHATSAPP YANG BISA DIGUNAKAN DI TERMUX
+WHATSAPP BOT PARA TERMUX
 
 
-<img src = "https://i.ibb.co/jD65tdm/62-812-1347-7896-20201109-230938.jpg" width="320">
+<img src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNo9YBQYjx1xke4J8Ez-SuRBaxiyjfnJWtEg&usqp=CAU" width="320">
 
 
 
 
-## CARA INSTALL
+## INSTALAÇÃO
+
 # TERMUX
 ```bash
-> download termux
-> buka
-> pkg install git
-> pkg install ffmpeg
-> pkg install nodejs
+> Baixe O Termux
+> Abra E Digite:
 > apt update && apt upgrade
-> git clone https://github.com/alfiansx/alfbot
-> cd alfbot
+> pkg install git
+> git clone https://github.com/FrostyGekyume/MornigStar
+> cd MornigStar
 > bash install.sh
-> npm i node-tesseract-ocr
-> pkg install tesseract
-> npm i
 > node index.js
+> Escaneie O Código E Pronto!
 ```
 
 
-# FITUR
+# FUNÇÕES
 
-| KEADAAN       |               FITUR     |
+| FUNCIONA       |               FUNÇÕES     |
 | :-----------: | :--------------------------------:  |
-|       ✅       |    PANTUN                         |
-|       ✅       | ANIMEPICT                         |
+|       ✅       | IGSTALK                           |
 |       ✅       | STICKER                           |
-|       ✅       | NULIS 
-|       ✅       | OCR                               |
-|       ✅       | QUOTES                            |
-|       ✅       | RANDOM PICT                       |
-|       ✅       | ANIMEPICT                         |
-|       ✅       | LIRIK                             |
-|       ✅       | ALAY                              |
-|       ✅       | YT,YTMP3,TWT,TIK TOK DOWNLOADER   |
-|       ✅       | WIKIPEDIA                         |
-|       ✅       | ARTI NAMA                         |
-|       ✅       | SHOLAT                            |
-|       ✅       | QURAN                             |
+|       ✅       | ESCREVER                          |
+|       ✅       | JAPA/JAPO                         |
+|       ✅       | ANIME                             |
+|       ✅       | LETRA                             |
 
-✅ aktif
+## EM BREVE MAIS OPÇÕES
 
 
-
-
-## THANKS TO
+## AGRADECIMENTOS
 * [`termux-whatsapp-bot`](https://github.com/fdciabdul/termux-whatsapp-bot)
 * [`botst4rz`](https://github.com/Bintang73/botst4rz)
 * [`ibnusyawall`](https://github.com/ibnusyawall)
-## DONASI
-* [`Saweria`](https://saweria.com/aditiaalfians)
+* [`alfbot`](https://github.com/alfiansx/alfbot)
