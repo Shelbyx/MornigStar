@@ -33,8 +33,11 @@ WHATSAPP BOT PARA TERMUX
 |       ✅       | JAPA/JAPO                         |
 |       ✅       | ANIME                             |
 |       ✅       | LETRA                             |
+|       ✅       | CRIPTO                            |
 
 ## EM BREVE MAIS OPÇÕES
+
+
 
 
 ## AGRADECIMENTOS
